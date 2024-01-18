@@ -4,7 +4,7 @@
 
 
 (define (test-and-sf x y z)
-    (if (and (= x 1) (= y 0) (= z (test-or-sf x y z)))
+    (if (and (= x 1) (= y 0) (= z (test-and-sf x y z)))
         #t
         #f))
 
