@@ -8,7 +8,7 @@
         #t
         #f))
 
-(define (test-and-sf x y z)
+(define (test-or-sf x y z)
     (if (or (= x 1) (= y 0) (= z (test-or-sf x y z)))
         #t
         #f))
