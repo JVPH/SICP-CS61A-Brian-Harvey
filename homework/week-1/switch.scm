@@ -4,23 +4,24 @@
 (Don’t worry about capitalization of letters.)
 |# 
 
-(define (swap w)
+(define (switch-one w)
   (cond ((equal? w 'i) 'you)
         ((equal? w 'me) 'you)
         ((equal? w 'you) 'me)
         (else w)))
 
-(define (swap-initial-you w)
-  (cond ((equal? w 'you) 'i)
-        (else w)))
 
-(define (switch-iterator strs)
-  (if (empty? strs)
+(define (switch-first w)
+  (if (equal? w 'you)
+    'i
+    (switch-one w)))
+
+(define (switch-rest sent)
+  (if (empty? sent)
     '()
-    (sentence (swap (first strs)) (switch-iterator (bf strs)))))
+    (se (switch-one (first sent)) (switch-rest (bf sent)))))
 
-(define (switch strs)
-  (if (empty? strs)
-    '()
-    (sentence (swap-initial-you (first strs)) (switch-iterator (bf strs)))))
-
+(define (switch sent)
+  (se (switch-first (first sent)) (switch-rest (bf sent))))
+    
+    
